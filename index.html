@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Eudes Thomas - Informatique CNED</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .hero-bg {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('infor.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #typing-text::after {
+        content: '|';
+        animation: blink 0.7s infinite;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-100 font-sans">
+    
+    <header class="bg-gray-800 shadow-xl fixed left-0 top-0 h-full w-64 z-50 border-r border-gray-700 hidden lg:flex flex-col">
+      <div class="p-8 text-center border-b border-gray-700 mb-6">
+          <h1 class="text-orange-500 font-bold text-2xl tracking-widest">EUDES</h1>
+          <p class="text-gray-400 text-xs mt-1 uppercase tracking-tighter">Thomas - Portfolio</p>
+      </div>
+      <nav class="flex-1 px-4 overflow-y-auto">
+        <ul class="flex flex-col space-y-2 text-sm font-medium">
+          <li><a href="#about" class="nav-link hover:text-orange-400 transition flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Accueil</a></li>
+          <li><a href="#apropos" class="nav-link hover:text-orange-400 transition flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>À propos</a></li>
+          <li><a href="#skills" class="nav-link hover:text-orange-400 transition flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Compétences</a></li>
+          <li><a href="#projects" class="nav-link hover:text-orange-400 transition flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>Projets Professionnel</a></li>
+          <li><a href="#path" class="nav-link hover:text-orange-400 transition flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Parcours</a></li>
+          <li><a href="#formation" class="nav-link hover:text-orange-400 transition flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>Ma Formation</a></li>
+          <li><a href="#stages" class="nav-link hover:text-orange-400 transition flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Stages</a></li>
+          <li><a href="#epreuves" class="nav-link hover:text-orange-400 transition flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>Épreuves E5 / E6 / E7</a></li>
+          <li><a href="#veille" class="nav-link hover:text-orange-400 transition flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>Veille Technologique</a></li>
+          <li><a href="#contact" class="nav-link hover:text-orange-400 transition flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700/50"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 012-2V7a2 2 0 01-2-2H5a2 2 0 01-2 2v10a2 2 0 012 2z" /></svg>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="p-6 text-xs text-gray-500 text-center border-t border-gray-700">
+          © 2025 Eudes Thomas
+      </div>
+    </header>
+
+    <main class="lg:ml-64">
+
+      <section id="about" class="hero-bg relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+        <div class="relative z-10 px-6 reveal">
+          <div class="flex justify-center items-center mb-4 space-x-2 text-orange-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <rect x="3" y="4" width="18" height="6" rx="1" ry="1" stroke-width="2"/>
+              <rect x="3" y="14" width="18" height="6" rx="1" ry="1" stroke-width="2"/>
+              <circle cx="8" cy="7" r="1" fill="currentColor"/>
+              <circle cx="8" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="font-semibold tracking-wide">BTS SIO SISR • Administrateur Systèmes & Réseaux</span>
+          </div>
+          <h2 class="text-5xl font-bold mb-6 text-white">Eudes Thomas</h2>
+          <p id="typing-text" class="text-lg max-w-2xl mx-auto text-gray-200 min-h-[1.5em]"></p>
+        </div>
+      </section>
+
+      <section id="apropos"  class="reveal bg-gray-900 py-24 px-6 min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto w-full">
+          <h2 class="text-3xl font-bold text-center mb-10">
+            <span class="bg-orange-500 text-white px-6 py-2 rounded-lg shadow-lg">À propos de moi</span>
+          </h2>
+          <p class="text-center text-gray-400 max-w-2xl mx-auto mb-14">
+            Découvrez mon parcours, mes compétences et ma passion pour l'informatique
+          </p>
+          <div class="grid md:grid-cols-2 gap-10">
+            <div class="bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-700 hover:scale-105 transition duration-300">
+              <div class="flex flex-col items-center text-center">
+                <img src="Thomas.jpg" class="w-32 h-32 rounded-full border-4 border-orange-500 mb-6 object-cover transition hover:scale-110">
+                <h3 class="text-xl font-bold">Eudes Thomas</h3>
+                <p class="text-orange-400 font-medium mb-4">Étudiant en BTS SIO SISR</p>
+                <p class="text-gray-400 mb-2"> Hondainville, France</p>
+                <p class="text-gray-400 mb-2"> <a href="mailto:tartouillard@gmail.com" class="text-orange-400 hover:underline">tartouillard@gmail.com</a></p>
+                <p class="text-gray-400 mb-6"> <a href="tel:0783735711" class="text-orange-400 hover:underline">07 83 73 57 11</a></p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                    <a href="Eudes Thomas 2025 - CV.pdf" target="_blank" class="bg-gray-700 hover:bg-orange-600 text-white text-xs font-bold py-2 px-4 rounded-lg flex items-center gap-2 transition whitespace-nowrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        Voir mon CV
+                    </a>
+                    <a href="Eudes Thomas 2025 - CV.pdf" download="Eudes_Thomas_CV.pdf" class="bg-gray-700 hover:bg-orange-600 text-white text-xs font-bold py-2 px-4 rounded-lg flex items-center gap-2 transition whitespace-nowrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        Télécharger mon CV
+                    </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-700 hover:scale-105 transition duration-300">
+              <h3 class="text-xl font-bold text-orange-400 mb-4">Qui suis-je ?</h3>
+              <p class="text-gray-300 leading-relaxed mb-6">
+                Je suis un étudiant passionné en informatique, actuellement en BTS SIO option SISR au CNED.  
+                Je m'intéresse particulièrement à l'administration systèmes & réseaux, la cybersécurité et la virtualisation.
+              </p>
+              
+              <div class="mb-6">
+                <p class="text-gray-200 font-semibold mb-3">Je souhaite continuer ma formation par le biais de l’apprentissage en alternance, ce qui me permettra :</p>
+                <ul class="text-gray-400 text-sm space-y-3">
+                  <li class="flex items-start gap-2">
+                    <span class="text-orange-500 font-bold">.</span>
+                    <span>D’acquérir une expérience professionnelle, et de pouvoir confronter mes connaissances théoriques aux réalités du terrain.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-orange-500 font-bold">.</span>
+                    <span>Le monde de l’entreprise est toujours en mouvement, l’alternance offre la possibilité de participer à la construction et au développement de nouveaux projets d’innovation et de pilotage de la performance, notamment en participant à la mise en œuvre et l’exploitation des réseaux informatiques.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
+                  <h4 class="text-orange-400 font-semibold mb-2">Points forts</h4>
+                  <ul class="text-gray-300 text-xs space-y-1">
+                    <li>✔ Autonomie</li><li>✔ Rigueur</li><li>✔ Esprit d'équipe</li>
+                  </ul>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4 border border-gray-700">
+                  <h4 class="text-orange-400 font-semibold mb-2">Centres d'intérêt</h4>
+                  <ul class="text-gray-300 text-xs space-y-1">
+                    <li>✔ Cybersécurité</li><li>✔ Virtualisation</li><li>✔ Sport & Gaming</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+ <section id="skills" " class="reveal bg-gray-900 min-h-screen flex items-center px-6 py-20">
+  <div class="max-w-6xl mx-auto w-full">
+    <h2 class="text-3xl font-bold text-center mb-14">
+      <span class="bg-orange-500 text-white px-6 py-2 rounded-lg shadow-lg">Compétences</span>
+    </h2>
+
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold text-orange-400 mb-8 text-center">Support et mise à disposition des services informatiques</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">Windows Server</h4>
+          <p class="text-gray-400 text-sm mb-4">Installation et configuration de Windows Server 2025.</p>
+          <img src="directory.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">Windows 11</h4>
+          <p class="text-gray-400 text-sm mb-4">Installation, dépannage des postes clients en environnement pro.</p>
+          <img src="window.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+	<div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">window 10</h4>
+          <p class="text-gray-400 text-sm mb-4">Installation, dépannage des postes clients en environnement pro.</p>
+          <img src="window10.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">Linux</h4>
+          <p class="text-gray-400 text-sm mb-4">Installation, configuration Debian, Ubuntu.</p>
+          <img src="linux.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">HTML / CSS</h4>
+          <p class="text-gray-400 text-sm mb-4">Conception web avec TailwindCSS.</p>
+          <img src="html.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">Certification PIX</h4>
+          <p class="text-gray-400 text-sm mb-4">Protection des données.</p>
+          <img src="pix.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+        
+
+
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-2xl font-bold text-orange-400 mb-8 text-center">Administration des systèmes et des réseaux</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">Proxmox</h4>
+          <p class="text-gray-400 text-sm mb-4">Virtualisation serveurs, création VM et paramétrage.</p>
+          <img src="proxmox.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+       
+        <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">GLPI </h4>
+          <p class="text-gray-400 text-sm mb-4">Gestion tickets, inventaire et stratégies GPO.</p>
+          <img src="glpi.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+	 <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">Cisco</h4>
+          <p class="text-gray-400 text-sm mb-4">Configuration routeurs, VLAN, switch.</p>
+          <img src="cisco.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">Services Réseaux</h4>
+          <p class="text-gray-400 text-sm mb-4">DNS, DHCP et MySQL.</p>
+          <img src="langage-mysql.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">Active directory</h4>
+          <p class="text-gray-400 text-sm mb-4">Configuration de services, gestion des GPO et des utilisateurs</p>
+          <img src="Active.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow border border-gray-700 hover:scale-105 transition flex flex-col">
+          <h4 class="font-semibold text-purple-300 mb-2">VMware</h4>
+          <p class="text-gray-400 text-sm mb-4">Virtualisation serveurs, création VM et paramétrage</p>
+          <img src="VMware.jpg" class="mt-auto w-full h-48 object-cover rounded-lg border border-gray-700">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="reveal bg-gray-900 min-h-screen flex items-center px-6 pt-10 pb-20">
+  <div class="max-w-6xl mx-auto w-full">
+    <h2 class="text-3xl font-bold text-center mb-14">
+      <span class="bg-orange-500 text-white px-6 py-2 rounded-lg shadow-lg">Projets Professionnels</span>
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      
+      <div onclick="toggleProject('desc-p1')" class="bg-gray-800 p-8 rounded-xl shadow border border-gray-700 hover:scale-105 transition cursor-pointer group">
+        <h3 class="font-bold text-orange-400 mb-2 text-xl">Projet 1</h3>
+        <h4 class="font-semibold text-purple-300 mb-4 text-md">Mise en place d'un prototype virtuel et Active Directory</h4>
+        
+        <img src="AD.jpg" class="w-full h-52 object-cover rounded-lg mb-4 border border-gray-700">
+        
+        <p class="text-gray-400 text-xs italic text-center mb-4">Cliquez pour voir les détails et documents</p>
+        
+        <div id="desc-p1" class="hidden mt-4 text-gray-300 text-sm border-t border-gray-700 pt-4 animate-fade-in">
+          <p class="mb-3 font-medium text-white">Projet de mise en place d'un prototype de réseau TiersLieux et Mise en place des OU Active Directory et règles GPO.</p>
+          <p class="bg-gray-900 p-3 rounded border-l-4 border-orange-500 mb-6">
+            <strong>Objectif :</strong> Améliorer la qualité du site, son référencement et sa conformité aux standards de la gestion d'incident.
+          </p>
+
+          <div class="grid grid-cols-2 gap-3 mt-4">
+            <a href="Fiche Contexte 2.odt" target="_blank" class="flex items-center justify-center bg-gray-700 hover:bg-orange-500 text-white py-2 px-3 rounded text-xs transition border border-gray-600">📄 Fiche Contexte</a>
+            <a href="Documentation technique 1 et compte rendu.odt" target="_blank" class="flex items-center justify-center bg-gray-700 hover:bg-orange-500 text-white py-2 px-3 rounded text-xs transition border border-gray-600">⚙️ Doc. Technique & Compte rendu</a>
+            <a href="Presentation_projet_1.mp4" target="_blank" class="flex items-center justify-center bg-gray-700 hover:bg-orange-500 text-white py-2 px-3 rounded text-xs transition border border-gray-600">🎥 Vidéos</a>
+            <a href="fiche-descriptive 1.docx" target="_blank" class="flex items-center justify-center bg-gray-700 hover:bg-orange-500 text-white py-2 px-3 rounded text-xs transition border border-gray-600">📋 Fiche de situation</a>
+          </div>
+        </div>
+      </div>
+
+      <div onclick="toggleProject('desc-p2')" class="bg-gray-800 p-8 rounded-xl shadow border border-gray-700 hover:scale-105 transition cursor-pointer group">
+        <h3 class="font-bold text-orange-400 mb-2 text-xl">Projet 2</h3>
+        <h4 class="font-semibold text-purple-300 mb-4 text-md">Mise en place d'un serveur GLPI, agent GLPI et gestion ticket d'incident</h4>
+        
+        <img src="GL.jpg" class="w-full h-52 object-cover rounded-lg mb-4 border border-gray-700">
+        
+        <p class="text-gray-400 text-xs italic text-center mb-4">Cliquez pour voir les détails et documents</p>
+        
+        <div id="desc-p2" class="hidden mt-4 text-gray-300 text-sm border-t border-gray-700 pt-4 animate-fade-in">
+          <p class="mb-3 font-medium text-white">Projet de mise en place de serveur GLPI et Active Directory, d’évolution et de déploiement du site TiersLieux.</p>
+          <p class="bg-gray-900 p-3 rounded border-l-4 border-orange-500 mb-6">
+            <strong>Objectif :</strong> Améliorer la qualité du site, son référencement et sa conformité aux standards de la gestion d'incident.
+          </p>
+
+          <div class="grid grid-cols-2 gap-3 mt-4">
+            <a href="Fiche Contexte 2.odt" target="_blank" class="flex items-center justify-center bg-gray-700 hover:bg-orange-500 text-white py-2 px-3 rounded text-xs transition border border-gray-600">📄 Fiche Contexte</a>
+            <a href="Document technique 2 et Compte rendu .odt" target="_blank" class="flex items-center justify-center bg-gray-700 hover:bg-orange-500 text-white py-2 px-3 rounded text-xs transition border border-gray-600">⚙️ Doc. Technique & Compte rendu</a>
+            <a href="Presentation.mp4" target="_blank" class="flex items-center justify-center bg-gray-700 hover:bg-orange-500 text-white py-2 px-3 rounded text-xs transition border border-gray-600">🎥 Vidéos</a>
+            <a href="fiche-descriptive2.docx" target="_blank" class="flex items-center justify-center bg-gray-700 hover:bg-orange-500 text-white py-2 px-3 rounded text-xs transition border border-gray-600">📋 Fiche de situation</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+      <section id="path"  class="reveal bg-gray-1000 min-h-screen flex items-center py-28 px-6">
+        <div class="max-w-6xl mx-auto w-full">
+          <h2 class="text-3xl font-bold text-center mb-14"><span class="bg-orange-500 text-white px-6 py-2 rounded-lg shadow-lg">Parcours</span></h2>
+          <div class="relative border-l-4 border-purple-500 pl-6 space-y-12">
+            <div class="bg-gray-800 p-8 rounded-xl shadow border border-gray-700 relative hover:scale-105 transition">
+              <span class="absolute -left-10 top-8 w-6 h-6 rounded-full bg-purple-500 border-4 border-gray-800"></span>
+              <h3 class="font-bold text-xl text-purple-300">BTS SIO SISR – CNED</h3>
+              <span class="text-sm text-gray-400">2024 – 2026</span>
+              <p class="text-gray-400 mt-2">Administration systèmes, réseaux et cybersécurité.</p>
+            	 <img src="CNED.jpg" class="mt-4 w-full h-48 object-cover rounded-lg border border-gray-800">
+	    </div>
+            <div class="bg-gray-800 p-8 rounded-xl shadow border border-gray-700 relative hover:scale-105 transition">
+              <span class="absolute -left-10 top-8 w-6 h-6 rounded-full bg-orange-500 border-4 border-gray-800"></span>
+              <h3 class="font-bold text-xl text-purple-300">Licence Informatique – Amiens</h3>
+              <span class="text-sm text-gray-400">2022 – 2024</span>
+              <p class="text-gray-400 mt-2">Programmation et algorithmique.</p>
+             <img src="fac.jpg" class="mt-4 w-full h-48 object-cover rounded-lg border border-gray-800">
+             </div>
+            <div class="bg-gray-800 p-8 rounded-xl shadow border border-gray-700 relative hover:scale-105 transition">
+              <span class="absolute -left-10 top-8 w-6 h-6 rounded-full bg-orange-500 border-4 border-gray-800"></span>
+              <h3 class="font-bold text-xl text-purple-300">Baccalauréat Général</h3>
+              <span class="text-sm text-gray-400">2019 - 2022</span>
+              <p class="text-gray-400 mt-2">Spécialités Maths et NSI. Mention obtenue.</p>
+             <img src="cassini.jpg" class="mt-4 w-full h-48 object-cover rounded-lg border border-gray-800">
+           </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="formation"  class="reveal bg-gray-900 py-24 px-6 min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto w-full">
+          <h2 class="text-3xl font-bold text-center mb-10">
+            <span class="bg-orange-500 text-white px-6 py-2 rounded-lg shadow-lg">Ma Formation : BTS SIO</span>
+          </h2>
+          <p class="text-center text-gray-400 max-w-3xl mx-auto mb-16 italic">
+            "Le Brevet de Technicien Supérieur Services Informatiques aux Organisations est un diplôme reconnu par l'État (Bac+2) qui forme aux services informatiques fournis aux organisations."
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-gray-800 p-8 rounded-xl border-2 border-orange-500 shadow-xl relative overflow-hidden">
+              <div class="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">MON OPTION</div>
+              <h3 class="text-2xl font-bold text-orange-400 mb-4">Option SISR</h3>
+              <p class="text-xs text-gray-400 mb-4 font-semibold uppercase tracking-widest">Solutions d’Infrastructure, Systèmes et Réseaux</p>
+              <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                L'option SISR s'occupe de l'infrastructure réseau et de l'administration des systèmes. L'objectif est d'assurer le bon fonctionnement, la sécurité et la maintenance des services informatiques de l'entreprise.
+              </p>
+              <ul class="text-gray-400 text-xs space-y-2">
+                <li class="flex items-center gap-2 font-medium">✔ Administration système (Linux & Windows)</li>
+                <li class="flex items-center gap-2 font-medium">✔ Virtualisation et Stockage</li>
+                <li class="flex items-center gap-2 font-medium">✔ Cybersécurité et supervision</li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-xl opacity-80 hover:opacity-100 transition">
+              <h3 class="text-2xl font-bold text-purple-400 mb-4">Option SLAM</h3>
+              <p class="text-xs text-gray-400 mb-4 font-semibold uppercase tracking-widest">Solutions Logicielles et Applications Métiers</p>
+              <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                L'option SLAM est centrée sur le développement. Elle apprend à concevoir des applications, à coder des sites web et à gérer des bases de données pour répondre aux besoins spécifiques d'une organisation.
+              </p>
+              <ul class="text-gray-400 text-xs space-y-2">
+                <li class="flex items-center gap-2">✔ Développement d'applications (Python, Java...)</li>
+                <li class="flex items-center gap-2">✔ Gestion de bases de données (SQL)</li>
+                <li class="flex items-center gap-2">✔ Conception web et mobile</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 shadow-inner">
+            <h3 class="text-xl font-bold text-white mb-8 text-center">Répartition horaire hebdomadaire</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div class="space-y-2">
+                <div class="text-3xl font-bold text-orange-500">10h</div>
+                <div class="text-[10px] text-gray-400 uppercase font-bold">Enseignements Info (SISR)</div>
+              </div>
+              <div class="space-y-2">
+                <div class="text-3xl font-bold text-orange-500">4h</div>
+                <div class="text-[10px] text-gray-400 uppercase font-bold">Maths & CEJM*</div>
+              </div>
+              <div class="space-y-2">
+                <div class="text-3xl font-bold text-orange-500">3h</div>
+                <div class="text-[10px] text-gray-400 uppercase font-bold">Culture & Anglais</div>
+              </div>
+              <div class="space-y-2">
+                <div class="text-3xl font-bold text-orange-500">4h</div>
+                <div class="text-[10px] text-gray-400 uppercase font-bold">Ateliers Pro & Cybersécurité</div>
+              </div>
+            </div>
+            <p class="text-gray-500 text-[9px] mt-8 text-center italic border-t border-gray-700 pt-4">
+              * CEJM : Culture Économique, Juridique et Managériale des organisations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="stages"  class="reveal bg-gray-900 min-h-screen flex items-center py-28 px-6">
+        <div class="max-w-6xl mx-auto w-full">
+          <h2 class="text-3xl font-bold text-center mb-14"><span class="bg-orange-500 text-white px-6 py-2 rounded-lg shadow-lg">Mes Stages</span></h2>
+          <div class="space-y-12">
+            
+            <div class="bg-gray-800 rounded-xl border border-gray-700 hover:scale-[1.02] transition overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/4 bg-gray-700 flex items-center justify-center p-4">
+                        <img src="michelin.jpg" alt="Logo Michelin" class="max-h-32 object-contain">
+                    </div>
+                    <div class="lg:w-3/4 p-8">
+                        <div class="flex flex-col md:flex-row md:justify-between items-start">
+                            <div class="flex-1">
+                                <h3 class="font-bold text-xl text-purple-300">Michelin Blanzy – Support Informatique (Stage 2)</h3>
+                                <p class="text-sm text-gray-400 italic">Février 2026 - Mars 2026 (6 semaines)</p>
+                                <p class="text-gray-400 mt-4">Approfondissement de la résolution de pannes et maintenance industrielle en environnement de production critique.</p>
+                                <div class="mt-4">
+                                    <h4 class="text-orange-400 font-semibold mb-2">Missions principales</h4>
+                                    <ul class="text-gray-300 text-sm space-y-1">
+                                        <li><span class="text-orange-500 font-bold mr-2">.</span>Documentation de procédure technique avancée</li>
+                                        <li><span class="text-orange-500 font-bold mr-2">.</span>Support utilisateur de proximité (Niveau 1 et 2)</li>
+                                        <li><span class="text-orange-500 font-bold mr-2">.</span>Gestion et résolution d'incidents sur équipements réseau</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 mt-6 md:mt-0 shrink-0">
+                                <a href="Rapport de stage 2.odt" class="bg-gray-700 hover:bg-orange-600 text-white text-xs font-bold py-2 px-6 rounded-lg transition text-center">Rapport de stage</a>
+                                <a href="2026-03-15 - Attestation de stage et Fiche évaluation du stagiaire.pdf" target="_blank" class="bg-gray-700 hover:bg-orange-600 text-white text-xs font-bold py-2 px-6 rounded-lg transition text-center">Attestation de stage</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl border border-gray-700 hover:scale-[1.02] transition overflow-hidden">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/4 bg-gray-700 flex items-center justify-center p-4">
+                        <img src="michelin.jpg" alt="Logo Michelin" class="max-h-32 object-contain">
+                    </div>
+                    <div class="lg:w-3/4 p-8">
+                        <div class="flex flex-col md:flex-row md:justify-between items-start">
+                            <div class="flex-1">
+                                <h3 class="font-bold text-xl text-purple-300">Michelin Blanzy – Support Informatique (Stage 1)</h3>
+                                <p class="text-sm text-gray-400 italic">Mars 2025 - Avril 2025 (4 semaines)</p>
+                                <p class="text-gray-400 mt-4">Diagnostic et résolution de pannes matérielles et logicielles au sein du parc informatique de l'usine.</p>
+                                <div class="mt-4">
+                                    <h4 class="text-orange-400 font-semibold mb-2">Missions principales</h4>
+                                    <ul class="text-gray-300 text-sm space-y-1">
+                                        <li><span class="text-orange-500 font-bold mr-2">.</span>Préparation et déploiement de postes de travail</li>
+                                        <li><span class="text-orange-500 font-bold mr-2">.</span>Assistance aux utilisateurs sur site</li>
+                                        <li><span class="text-orange-500 font-bold mr-2">.</span>Maintenance préventive des terminaux industriels</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2 mt-6 md:mt-0 shrink-0">
+                                <a href="Rapport de stage 1.odt" class="bg-gray-700 hover:bg-orange-600 text-white text-xs font-bold py-2 px-6 rounded-lg transition text-center">Rapport de stage</a>
+                                <a href="2025-06-06 - Fiche d'valuation & Attestation signée Michelin.pdf" class="bg-gray-700 hover:bg-orange-600 text-white text-xs font-bold py-2 px-6 rounded-lg transition text-center">Attestation de stage</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+</section><section id="epreuves"  class="reveal bg-gray-900 min-h-screen flex items-center py-28 px-6">
+  <div class="max-w-6xl mx-auto w-full">
+    <h2 class="text-3xl font-bold text-center mb-14">
+      <span class="bg-orange-500 text-white px-6 py-2 rounded-lg shadow-lg">Épreuves E5 / E6 / E7</span>
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-orange-500 transition shadow-2xl flex flex-col">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="bg-orange-500 p-3 rounded-lg">
+            <span class="text-xl font-bold text-white">E5</span>
+          </div>
+          <h3 class="text-xl font-bold text-purple-300 leading-tight">Support et mise à disposition de services</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+          Épreuve orale s'appuyant sur le Portfolio de situations professionnelles vécues en stage ou en formation.
+        </p>
+        <ul class="text-gray-400 text-sm space-y-2 mb-8 flex-1">
+          <li class="flex items-center gap-2"><span class="text-orange-500">•</span> Réponse aux incidents (Helpdesk)</li>
+          <li class="flex items-center gap-2"><span class="text-orange-500">•</span> Déploiement de postes et services</li>
+          <li class="flex items-center gap-2"><span class="text-orange-500">•</span> Gestion du patrimoine informatique</li>
+        </ul>
+        <div class="flex flex-col gap-2 mb-6">
+          <a href="Tableaudesynthèse.ods" download class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold py-2 px-3 rounded-lg text-center transition shadow-md">
+            Tableau de synthèse (E5)
+          </a>
+          <a href="01-04-2026 Eudes Thomas portfolio.mp4" download class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold py-2 px-3 rounded-lg text-center transition shadow-md">
+            Vidéo de présentation (E5)
+          </a>
+        </div>
+        <div class="text-orange-400 text-sm font-bold italic">Durée : 40 minutes (Oral)</div>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-purple-600 transition shadow-2xl flex flex-col">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="bg-purple-600 p-3 rounded-lg">
+            <span class="text-xl font-bold text-white">E6</span>
+          </div>
+          <h3 class="text-xl font-bold text-purple-300 leading-tight">Administration systèmes et réseaux</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+          Épreuve pratique évaluant les compétences de conception et d'administration d'une infrastructure réseau et systèmes.
+        </p>
+        <ul class="text-gray-400 text-sm space-y-2 mb-8 flex-1">
+          <li class="flex items-center gap-2"><span class="text-purple-500">•</span> Virtualisation (Proxmox/ESXi)</li>
+          <li class="flex items-center gap-2"><span class="text-purple-500">•</span> Routage, commutation et VLANs</li>
+          <li class="flex items-center gap-2"><span class="text-purple-500">•</span> Services (Active Directory, DHCP, DNS)</li>
+        </ul>
+
+        <div class="flex flex-col gap-2 mb-6">
+
+        </div>
+        <div class="text-purple-400 text-sm font-bold italic">Modalité : 1h30 préparation / 40 min oral</div>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-red-600 transition shadow-2xl flex flex-col">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="bg-red-600 p-3 rounded-lg">
+            <span class="text-xl font-bold text-white">E7</span>
+          </div>
+          <h3 class="text-xl font-bold text-purple-300 leading-tight">Cybersécurité des services</h3>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+          Épreuve écrite portant sur la sécurisation des infrastructures, des accès et des données au sein de l'organisation.
+        </p>
+        <ul class="text-gray-400 text-sm space-y-2 mb-8 flex-1">
+          <li class="flex items-center gap-2"><span class="text-red-500">•</span> Sécurisation des équipements réseau</li>
+          <li class="flex items-center gap-2"><span class="text-red-500">•</span> Analyse de vulnérabilités</li>
+          <li class="flex items-center gap-2"><span class="text-red-500">•</span> Politiques de sécurité (PSSI)</li>
+        </ul>
+        <div class="mb-6"></div>
+        <div class="text-red-400 text-sm font-bold italic">Durée : 4 heures (Écrit)</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="veille"  class="reveal bg-gray-900 py-24 px-6 min-h-screen flex items-center">
+  <div class="max-w-6xl mx-auto w-full">
+    <h2 class="text-3xl font-bold text-center mb-14">
+      <span class="bg-orange-500 text-white px-6 py-2 rounded-lg shadow-lg">Veille Technologique</span>
+    </h2>
+
+    <h3 class="text-xl font-bold text-orange-400 mb-8 border-l-4 border-orange-500 pl-4">Sources d'informations</h3>
+    <div class="grid md:grid-cols-3 gap-8 mb-20">
+      
+      <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden hover:scale-105 transition flex flex-col">
+        <div class="p-6 flex-1">
+          <span class="text-[10px] bg-purple-600 text-white px-2 py-1 rounded uppercase font-bold">Presse IT</span>
+          <h4 class="font-bold text-white mt-4 mb-3">Le Monde Informatique</h4>
+          <p class="text-gray-400 text-sm mb-4">Actualité IT, Cloud et Infrastructure en France.</p>
+          <div class="bg-gray-900/50 p-3 rounded-lg mb-6">
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+              Référence pour le suivi des investissements numériques des entreprises françaises et des évolutions du Cloud.
+            </p>
+          </div>
+          <a href="https://www.lemondeinformatique.fr/" target="_blank" class="text-orange-400 text-xs font-bold hover:underline flex items-center gap-2">Visiter le site</a>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden hover:scale-105 transition flex flex-col">
+        <div class="p-6 flex-1">
+          <span class="text-[10px] bg-purple-600 text-white px-2 py-1 rounded uppercase font-bold">Analyses</span>
+          <h4 class="font-bold text-white mt-4 mb-3">ZDNet</h4>
+          <p class="text-gray-400 text-sm mb-4">Analyse des tendances technologiques professionnelles.</p>
+          <div class="bg-gray-900/50 p-3 rounded-lg mb-6">
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+              Expertise sur la mobilité, la 5G et les stratégies de transformation digitale pour les décideurs informatiques.
+            </p>
+          </div>
+          <a href="https://www.zdnet.fr/" target="_blank" class="text-orange-400 text-xs font-bold hover:underline flex items-center gap-2">Visiter le site</a>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden hover:scale-105 transition flex flex-col">
+        <div class="p-6 flex-1">
+          <span class="text-[10px] bg-purple-600 text-white px-2 py-1 rounded uppercase font-bold">Décryptage</span>
+          <h4 class="font-bold text-white mt-4 mb-3">Silicon</h4>
+          <p class="text-gray-400 text-sm mb-4">Décryptage de la transformation numérique mondiale.</p>
+          <div class="bg-gray-900/50 p-3 rounded-lg mb-6">
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+              Focus sur l'open-source, les data centers et les enjeux de souveraineté numérique européenne.
+            </p>
+          </div>
+          <a href="https://www.silicon.fr/" target="_blank" class="text-orange-400 text-xs font-bold hover:underline flex items-center gap-2">Visiter le site</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold text-orange-400 mb-8 border-l-4 border-orange-500 pl-4">Articles Spécifiques & IA</h3>
+    <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden hover:scale-105 transition flex flex-col">
+        <div class="p-6 flex-1">
+          <span class="text-[10px] bg-orange-600 text-white px-2 py-1 rounded uppercase font-bold">Cybersecurity</span>
+          <h4 class="font-bold text-white mt-4 mb-3">AI in Cybersecurity Market</h4>
+          <p class="text-gray-400 text-sm mb-4">Explosion du marché de l'IA appliquée à la cybersécurité en 2025.</p>
+          <div class="bg-gray-900/50 p-3 rounded-lg mb-6">
+            <p class="text-[11px] text-gray-400 leading-relaxed italic">
+              L'article souligne l'augmentation massive des investissements dans les systèmes d'auto-défense capables de bloquer les attaques.
+            </p>
+          </div>
+          <a href="https://www.cysecurity.news/2025/05/ai-in-cybersecurity-market-sees-rapid.html" target="_blank" class="text-orange-400 text-xs font-bold hover:underline flex items-center gap-2">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden hover:scale-105 transition flex flex-col">
+        <div class="p-6 flex-1">
+          <span class="text-[10px] bg-orange-600 text-white px-2 py-1 rounded uppercase font-bold">Data Breach</span>
+          <h4 class="font-bold text-white mt-4 mb-3">IA & Cyber Protection</h4>
+          <p class="text-gray-400 text-sm mb-4">Utilisation de l'IA pour prévenir les fuites de données massives.</p>
+          <div class="bg-gray-900/50 p-3 rounded-lg mb-6">
+            <p class="text-[11px] text-gray-400 leading-relaxed italic">
+              Analyse des algorithmes de détection d'anomalies comportementales identifiant les exfiltrations en temps réel.
+            </p>
+          </div>
+          <a href="https://www.metacompliance.com/fr/blog/data-breach/ia-cyber-security" target="_blank" class="text-orange-400 text-xs font-bold hover:underline flex items-center gap-2">Lire l'article</a>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden hover:scale-105 transition flex flex-col">
+        <div class="p-6 flex-1">
+          <span class="text-[10px] bg-orange-600 text-white px-2 py-1 rounded uppercase font-bold">Trends 2025</span>
+          <h4 class="font-bold text-white mt-4 mb-3">6 AI Trends to Watch</h4>
+          <p class="text-gray-400 text-sm mb-4">Les tendances majeures de l'IA en sécurité informatique pour 2025.</p>
+          <div class="bg-gray-900/50 p-3 rounded-lg mb-6">
+            <p class="text-[11px] text-gray-400 leading-relaxed italic">
+              Focus sur l'IA générative utilisée par les attaquants et la riposte via des LLM spécialisés en défense.
+            </p>
+          </div>
+          <a href="https://www.darkreading.com/cyber-risk/6-ai-related-security-trends-watch-2025" target="_blank" class="text-orange-400 text-xs font-bold hover:underline flex items-center gap-2">Lire l'article</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    
+  <section id="contact"  class="reveal bg-gray-900 py-28 px-6">
+        <div class="max-w-6xl mx-auto w-full text-center">
+          <h2 class="text-3xl font-bold mb-14"><span class="bg-orange-500 text-white px-6 py-2 rounded-lg shadow-lg">Contact</span></h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <a href="mailto:tartouillard@gmail.com" class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-orange-500 transition">
+              <h3 class="text-xl font-bold text-white mb-2">Email</h3>
+              <p class="text-gray-400">tartouillard@gmail.com</p>
+            </a>
+            <a href="tel:0783735711" class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-orange-500 transition">
+              <h3 class="text-xl font-bold text-white mb-2">Téléphone</h3>
+              <p class="text-gray-400">07 83 73 57 11</p>
+            </a>
+            <a href="https://linkedin.com/in/thomas-eudes-326" target="_blank" class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-orange-500 transition">
+              <h3 class="text-xl font-bold text-white mb-2">LinkedIn</h3>
+              <p class="text-gray-400">Thomas Eudes</p>
+            </a>
+          </div>
+          <div class="mt-12">
+            <a href="Eudes Thomas 2025 - CV.pdf" target="_blank" class="inline-block bg-gradient-to-r from-orange-500 to-purple-600 text-white font-semibold px-8 py-4 rounded-xl shadow-xl transition hover:scale-110">Accéder à mon CV complet</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+      function toggleProject(id) {
+        const desc = document.getElementById(id);
+        desc.classList.toggle('hidden');
+      }
+
+      // Intersection Observer pour les animations de reveal
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // Effet de frappe
+      const text = "Bienvenue dans mon environnement technique. Je construis les réseaux de demain.";
+      let i = 0;
+      function typeWriter() {
+        if (i < text.length) {
+          document.getElementById("typing-text").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 50);
+        }
+      }
+      window.onload = typeWriter;
+    </script>
+  </body>
+</html>
